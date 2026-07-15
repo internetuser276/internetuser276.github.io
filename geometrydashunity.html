@@ -1,13 +1,23 @@
+<!-- Ultimate Game Stash file--> 
+<!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->
+<!-- Made by Genizy-->
+
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
-    <title>Geometry Dash Lite</title>
+    <base href="https://rawcdn.githack.com/genizy/google-class/main/gdlite/">
+    <title>Geometry Dash</title>
+    <link rel="icon" type="image/png" href="https://e3334afd.cf-nate.pages.dev/0/g/geodash/game/splash.png">
     <meta name="description" content="Play Geometry Dash Lite Online For Free on Chromebook, PC, Windows, Desktop in Chrome and modern browsers.">
+    <link rel="canonical" href="https://gamecomets.com/game/geometry-dash-lite/" />
     <meta name="robots" content="noindex, nofollow">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="themes/geometrydashlite.io/rs/css/home.css?v=1">
 </head>
+<meta name="cf-2fa-verify" content="GpoihhhSRQknehLQkEtXM">
 
 <body>
     <style>
@@ -209,25 +219,42 @@
                 }, 1000);
             });
         </script>
-		<script>
-			window.addEventListener('load', function() {
-				const originalOpen = window.open;
-				
-				window.open = function(url, target) {
-					if (url && (
-						url.includes('https://sprunkiscrunkly.com/') ||
-						url.includes('https://sprunksters.com/') ||
-						url.includes('https://geometrydashgames.com/') ||
-						url.includes('https://geometrydashgames.io/') ||
-						url.includes('https://sprunkipyramixed.com/')
-					)) {
-						return originalOpen.apply(window, arguments);
-					}
-					return null;
-				};
-			});
-		</script>
-		<script defer data-domain="s.geometrydashgames.io" src="https://app.pageview.app/js/script.js"></script>
+        <script src="themes/geometrydashlite.io/rs/js/jquery-3.4.1.min.js"></script>
+        <script>
+            function ToggleInfo() {
+                if ($('button.hide-main-panel').children('i')[0].textContent != 'Info') {
+                    $("div.main-panel").css('width', '0px');
+                    $("div.main-panel-ads").css('display', 'none');
+                    $("div.main-panel-content").css('display', 'none');
+                    $('button.hide-main-panel').children('i').html('Info');
+                    console.log('Info');
+                } else {
+                    $("div.main-panel").css('width', $("div.main-panel").css('max-width'));
+                    $("div.main-panel-ads").css('display', 'block');
+                    $("div.main-panel-content").css('display', 'block');
+                    $('button.hide-main-panel').children('i').html('>>');
+                    console.log('>>');
+                }
+            }
+
+            function ShowInfo() {
+                $("div.main-panel").css('width', $("div.main-panel").css('max-width'));
+                $("div.main-panel-ads").css('display', 'block');
+                $("div.main-panel-content").css('display', 'block');
+                $('button.hide-main-panel').children('i').html('>>');
+            }
+
+            function HideInfo() {
+                $("div.main-panel").css('width', '0px');
+                $("div.main-panel-ads").css('display', 'none');
+                $("div.main-panel-content").css('display', 'none');
+                $('button.hide-main-panel').children('i').html('Info');
+            }
+            $('button.hide-main-panel').click(function() {
+                console.log('a');
+                ToggleInfo();
+            });
+        </script>
 </body>
 
 </html>
